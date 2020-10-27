@@ -47,8 +47,14 @@ p {
 
 .contenedor {
     max-width: 1000px;
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+    .contenedor {
+        width: 95%;
+    }
 }
 
 img {
@@ -68,9 +74,15 @@ img {
 
 .barra .nav {
     display: grid;
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 1rem;
     justify-content: center;
+}
+
+@media (min-width: 480px) {
+    .barra .nav {
+        grid-template-columns: repeat(2, 200px);
+    }
 }
 
 .barra .nav a {
@@ -87,8 +99,15 @@ img {
 
 .lista-productos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 50%);
+    grid-gap: 1rem;
+}
+
+@media (min-width: 480px) {
+    .lista-productos {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+    }
 }
 
 @media (min-width: 768px) {
@@ -111,7 +130,13 @@ img {
 }
 
 .contenido-producto .titulo {
-    font-size: 4rem;
+    font-size: 3rem;
+}
+
+@media (min-width: 480px) {
+    .contenido-producto .titulo {
+        font-size: 4rem;
+    }
 }
 
 .titulo a {
@@ -156,6 +181,20 @@ img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-column-gap: 2rem;
+}
+
+.contenedor-informacion img {
+    grid-row: 1;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .contenedor-informacion img {
+        grid-row: unset;
+    }
+    .contenedor-informacion p {
+        margin: 0;
+    }
 }
 
 .imagen-producto {
@@ -216,4 +255,48 @@ img {
 .boton:hover {
     cursor: pointer;
     background-color: rgb(233, 187, 2);
+}
+
+.pre-byJG {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    bottom: -50px;
+    transition: bottom 0.2s ease;
+}
+
+.byJG {
+    width: fit-content;
+    margin: 0;
+    padding: 0 10px;
+    bottom: 90px;
+    color: black;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    font-family: 'Times New Roman';
+    font-size: 1.4rem;
+    align-items: center;
+}
+
+.pre-byJG.show {
+    bottom: 0;
+    height: 32px;
+    transition: bottom 1s ease 1s;
+}
+
+@media (min-width: 768px) {
+    .byJG {
+        font-size: 1.8rem;
+    }
+}
+
+.byJG>.image {
+    background-image: url('/favicon.ico');
+    background-position: center center;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    margin: 0 4px;
 }
